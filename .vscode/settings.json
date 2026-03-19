@@ -1,0 +1,10 @@
+{
+  "editor.tabSize": 2,  
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.showUnused": true,
+   "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.removeUnusedImports": "always",
+  }
+}
