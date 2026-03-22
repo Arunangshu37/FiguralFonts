@@ -1,0 +1,31 @@
+name: Run tests
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        # Use actions/checkout to get the repository code
+        uses: actions/checkout@v4
+        with:
+          # This token has 'read and write' permissions by default for same-repo actions
+          token: ${{ secrets.GITHUB_TOKEN }} 
+
+      - name: Setup Node.js (or your build environment)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run test
+          # The build output is usually in a directory like 'dist' or 'build'

@@ -1,3 +1,14 @@
-<b>
-  <pre #dataDisplayElement></pre>
-</b>
+
+<mat-toolbar>
+  <span>Figural Fonts</span>
+</mat-toolbar>
+
+
+<app-text-display [templateRef]="figuralFontTemplate" ></app-text-display>
+
+
+<ng-template #figuralFontTemplate>
+  <b>
+    <pre #dataDisplayElement></pre>
+  </b>
+</ng-template>
