@@ -22,7 +22,7 @@ describe('Font', () => {
       const expectedOutput =`* * * * *  ${doubleSpace}    * *     `;
       
       // Act
-      const line = service.getFontLineFromLetter('A Y', 2);
+      const line = service.getFontLineFromLetter('a Y', 2);
 
       // Assert
       expect(line).toEqual(expectedOutput);
@@ -33,7 +33,7 @@ describe('Font', () => {
       const expectedOutput = `$ $ $ $ $  ${doubleSpace}    $ $     `;
 
       // Act
-      const line = service.getFontLineFromLetter('A Y', 2, "$");
+      const line = service.getFontLineFromLetter('A y', 2, "$");
 
       // Assert
       expect(line).toEqual(expectedOutput);

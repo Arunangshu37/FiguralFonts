@@ -28,4 +28,3 @@ jobs:
         run: |
           npm install
           npm run test
-          # The build output is usually in a directory like 'dist' or 'build'

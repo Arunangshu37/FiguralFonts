@@ -6,8 +6,8 @@ import { alphabetMap } from '../data/figural-font.helper';
   providedIn: 'root',
 })
 export class FontService {
-  
   public getFontLineFromLetter(text: string, row: number, customCharacter?: string) {
+    text = text.toUpperCase();
     let line = "";
     for(let index = 0; index < text.length; index++) {
       if(text[index] == singleSpace) {
