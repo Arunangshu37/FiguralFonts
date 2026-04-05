@@ -9,4 +9,5 @@ import { Component, input, TemplateRef } from '@angular/core';
 })
 export class TextDisplayComponent {
   public templateRef = input<TemplateRef<any>>();
+  public showDisplayLabel = input<boolean>(false);
 }

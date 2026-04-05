@@ -19,4 +19,30 @@ describe('TextDisplayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show display label when showDisplayLabel is true', () => {
+    // Arrange
+    fixture.componentRef.setInput('showDisplayLabel', true);
+    
+    // Act
+    fixture.detectChanges();
+
+    // Assert
+    const compiled = fixture.nativeElement as HTMLElement;
+    const element = compiled.querySelector('#show-display-label');
+    expect(element).not.toBeNull();
+  });
+
+  it('should not show display label when showDisplayLabel is false', () => {
+    // Arrange
+    fixture.componentRef.setInput('showDisplayLabel', false);
+    
+    // Act
+    fixture.detectChanges();
+
+    // Assert
+    const compiled = fixture.nativeElement as HTMLElement;
+    const element = compiled.querySelector('#show-display-label');
+    expect(element).toBeNull();
+  });
 });

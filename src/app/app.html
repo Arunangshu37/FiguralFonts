@@ -1,13 +1,15 @@
 <mat-toolbar class="p-3">
-  <span>Figural Fonts</span>
+  <div class="container d-flex justify-content-center">
+    <span>Figural Fonts</span>
+  </div>
 </mat-toolbar>
-<div class="flex-fill container overflow-auto d-flex flex-column">
-  <div class="row overflow-auto flex-fill  d-flex flex-column">
+<div class="flex-fill container overflow-auto d-flex flex-column align-items-center">
+  <div class="row overflow-auto flex-fill  d-flex flex-column w-100">
     <div class="col-md-12 overflow-auto flex-fill d-flex flex-column">
-      <div class="d-flex flex-column">
-        <i>Note: Currently only capital letters are supported.</i>
-        <form (submit)="onFormSubmit($event)" class="d-flex flex-column">
-          <div class="d-flex mt-2 gap-4">
+      <div class="d-flex flex-column align-items-center">
+        <form (submit)="onFormSubmit($event)" class="d-flex flex-column w-fit">
+          <i>Note: Currently only capital letters are supported.</i>
+          <div class="d-flex mt-2 gap-4 ">
             <mat-form-field [subscriptSizing]="'dynamic'" [appearance]="'outline'">
               <mat-label>Enter your text</mat-label>
               <input matInput placeholder="Ex. Pizza" [formField]="form.text">
@@ -24,12 +26,11 @@
             
             <mat-slide-toggle [formField]="form.shouldClearPreviousGenerations" >Clear previous generations</mat-slide-toggle>
           </div>
-
-          <button type="submit" style="width: fit-content;" class="mt-2" matButton="elevated">Create Figural Font</button>
+          <button type="submit" style="width: fit-content;" class="mt-2" matButton="filled">Create Figural Font</button>
         </form>
       </div>
       <div class="d-flex flex-column overflow-auto">
-        <app-text-display [templateRef]="figuralFontTemplate"></app-text-display>
+        <app-text-display [templateRef]="figuralFontTemplate" [showDisplayLabel]="showDisplayLabel()"></app-text-display>
       </div>
     </div>
   </div>
