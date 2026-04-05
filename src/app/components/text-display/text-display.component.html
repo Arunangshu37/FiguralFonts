@@ -1,7 +1,9 @@
 
-<div class="container d-flex flex-column h-100 overflow-auto">
-  <h2>Here is the figural font generated for you</h2>
-  <div class="d-flex overflow-auto flex-fill">
+<div class="container d-flex flex-column h-100 overflow-auto align-items-center">
+  @if(showDisplayLabel()) {
+    <h2 id="show-display-label">Here is the figural font generated for you</h2>
+  }
+  <div class="d-flex overflow-auto flex-fill w-100" style="font-size: 20px;">
     <ng-container [ngTemplateOutlet]="templateRef()" ></ng-container>
   </div>
 </div>

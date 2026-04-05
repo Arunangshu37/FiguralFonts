@@ -33,7 +33,7 @@ export class App implements OnInit {
   });
 
   protected readonly title = signal('FiguralFonts');
-  
+  protected showDisplayLabel = signal(false);
   private fontService = inject(FontService);
   private route = inject(ActivatedRoute);
   private destroyRef = inject(DestroyRef);
@@ -71,5 +71,6 @@ export class App implements OnInit {
       this.dataDisplayElement.nativeElement.innerHTML += line;
       this.dataDisplayElement.nativeElement.innerHTML += '<br>';
     }
+    this.showDisplayLabel.set(true);
   }
 }
